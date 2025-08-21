@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lessons - SR 301</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="Favicon.png" rel="icon" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #FDF7F1;
+      color: #1B4557;
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #1A0F00;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .main-content p, .main-content ul, .main-content ol {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 500;
+      font-size: 14pt;
+      color: #000;
+      line-height: 1.7;
+    }
+    a {
+      color: #254473;
+      text-decoration: underline;
+    }
+    a:focus, a:hover {
+      outline: 2px solid #254473;
+      outline-offset: 2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 220px;
+      background-color: #1A0F00;
+      color: #F9F9F9;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 100px; /* Match index page */
+      z-index: 10;
+      box-shadow: 2px 0 8px rgba(27,69,87,0.08);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .sidebar li {
+      width: 100%;
+    }
+    .sidebar a {
+      display: block;
+      color: #F9F9F9;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+      color: #254473;
+      background: #FDF7F1;
+      border-left: 4px solid #254473;
+      outline: 2px solid #254473;
+      outline-offset: 2px;
+    }
+    .layout {
+      margin-left: 220px;
+      width: calc(100vw - 220px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #FDF7F1;
+      box-sizing: border-box;
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: #FDF7F1;
+      border-bottom: 2px solid #FDF7F1;
+    }
+    .banner-img {
+      width: 100%;
+      height: 720px;
+      object-fit: cover;
+      object-position: bottom;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      color: #051214;
+      font-size: 2rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 0 0 1rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0;
+    }
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      background: #FDF7F1;
+      border-radius: 0 0 1rem 1rem;
+      box-sizing: border-box;
+      min-height: 400px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 2rem;
+      background: #fff;
+      color: #051214;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 14pt;
+    }
+    .my-table td:nth-child(1),
+  .my-table th:nth-child(1) {
+    text-align: center;
+  }
+    th, td {
+      border: 1px solid #9a9896;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background: #F7E9CB;
+      font-weight: 700;
+    }
+    caption {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #254473;
+    }
+    @media (max-width: 900px) {
+      .sidebar {
+        width: 160px;
+        padding-top: 80px;
+      }
+      .layout {
+        margin-left: 160px;
+        width: calc(100vw - 160px);
+      }
+      .banner-content {
+        font-size: 1.2rem;
+        padding: 0 1rem 0.5rem 1rem;
+      }
+      .main-content {
+        padding: 1rem;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 0;
+        box-shadow: none;
+      }
+      .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .sidebar li {
+        width: auto;
+      }
+      .sidebar a {
+        padding: 0.5rem 1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+      }
+      .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+  border-bottom: 3px solid #254473;
+  background: #FDF7F1;
+        color: #254473;
+      }
+      .layout {
+        margin-left: 0;
+        width: 100vw;
+      }
+      .banner {
+        height: 80px;
+      }
+      .main-content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation" class="sidebar">
+    <div style="width:100%; text-align:center; margin-top:0; margin-bottom:1rem;">
+      <span style="font-family:'Montserrat', Arial, sans-serif; font-size:2rem; font-weight:700; color:#F9F9F9; letter-spacing:2px;">SR 301</span>
+    </div>
+    <hr style="width:80%; border:1px solid #F9F9F9; margin:0 auto 1.2rem auto;" />
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lessons.html" aria-current="page">Lessons</a></li>
+      <li><a href="files.html">Resources</a></li>
+    </ul>
+  </nav>
+  <div class="layout">
+    <div class="banner" role="banner">
+      <img src="banner image.jpg" alt="SR 301 Banner" class="banner-img" />
+      <div class="banner-content">
+        <h1 style="color:#051214; margin:0;">Lessons</h1>
+      </div>
+    </div>
+    <main class="main-content" id="main-content" tabindex="-1">
+      <p>Use the links in the tables below to start working through the course content. You can jump to any lesson or quiz at any time.</p>
+      <h2>Google Drive</h2>
+      <table class="my-table" style="width: 70%;" aria-label="Lessons Overview">
+        <colgroup>
+    <col style="width: 5%;">
+    <col style="width: 30%;">
+  </colgroup>
+        <thead>
+          <tr>
+            <th>Lesson #</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a href="drive-essential-settings.html">Google Drive - Essential Settings</a></td></tr>
+          <tr><td>2</td><td><a href="drive-navigation.html">Google Drive - Navigation and File Creation</a></td></tr>
+          <tr><td>3</td><td><a href="drive-actions.html">Google Drive - Actions, Search, and Keyboard Help</a></td></tr>
+          <tr><td>4</td><td><a href="https://docs.google.com/forms/d/e/1FAIpQLSd59lP9bkPjx4q-9rxtEupst8KRyOHPuWLNuEaFGCu9QCDRDg/viewform?usp=header" target="_blank" rel="noopener">Google Drive Quiz</a></td></tr>
+        </tbody>
+      </table>
+      <h2>Google Docs</h2>
+      <table class="my-table" style="width: 80%;" aria-label="Lessons Overview">
+        <colgroup>
+    <col style="width: 5%;">
+    <col style="width: 30%;">
+  </colgroup>
+        <thead>
+          <tr>
+            <th>Lesson #</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a href="docs-essential-settings.html">Google Docs - Essential Settings</a></td></tr>
+          <tr><td>2</td><td><a href="docs-file-menu.html">Google Docs - File Menu, Formatting Tools, and Sharing Files</a></td></tr>
+          <tr><td>3</td><td><a href="docs-navigation.html">Google Docs - Navigation and Comments</a></td></tr>
+          <tr><td>4</td><td><a href="docs-alt-text.html">Google Docs - Images and Alt Text</a></td></tr>
+          <tr><td>5</td><td><a href="https://docs.google.com/forms/d/e/1FAIpQLSceW1T5y8WNk36LAWMGMhlzPwRJ14DBVYORWAuaEJJHbK7-0A/viewform?usp=header" target="_blank" rel="noopener">Google Docs Quiz</a></td></tr>
+        </tbody>
+      </table>
+      <h2>Google Slides</h2>
+      <table class="my-table" style="width: 75%;" aria-label="Lessons Overview">
+        <colgroup>
+    <col style="width: 5%;">
+    <col style="width: 30%;">
+  </colgroup>
+        <thead>
+          <tr>
+            <th>Lesson #</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a href="slides-essential-settings.html">Google Slides - Essential Settings</a></td></tr>
+          <tr><td>2</td><td><a href="slides-3-areas.html">Google Slides - 3 Main Areas</a></td></tr>
+          <tr><td>3</td><td><a href="slides-adding-slides.html">Google Slides - Adding, Deleting, and Reordering Slides</a></td></tr>
+          <tr><td>4</td><td><a href="slides-layout-templates.html">Google Slides - Slide Layout Templates</a></td></tr>
+          <tr><td>5</td><td><a href="slides-editing-slides.html">Google Slides - Editing Slide Contents</a></td></tr>
+          <tr><td>6</td><td><a href="slides-presenting.html">Google Slides - Presenting</a></td></tr>
+          <tr><td>7</td><td><a href="https://docs.google.com/forms/d/e/1FAIpQLScyUz0-JTYDZNrUhnK4B5_1SN1qC_o3_9EwR_fmAyH_Oa4xXA/viewform?usp=header" target="_blank" rel="noopener">Google Slides Quiz</a></td></tr>
+        </tbody>
+      </table>
+      <h2>Gmail</h2>
+      <table class="my-table" style="width: 50%;" aria-label="Lessons Overview">
+        <colgroup>
+    <col style="width: 5%;">
+    <col style="width: 30%;">
+  </colgroup>
+        <thead>
+          <tr>
+            <th>Lesson #</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a href="gmail-essential-settings.html">Gmail - Essential Settings</a></td></tr>
+          <tr><td>2</td><td><a href="gmail-navigation.html">Gmail - Basic Navigation</a></td></tr>
+          <tr><td>3</td><td><a href="gmail-reading-emails.html">Gmail - Reading Emails</a></td></tr>
+          <tr><td>4</td><td><a href="gmail-writing-emails.html">Gmail - Writing Emails</a></td></tr>
+          <tr><td>5</td><td><a href="https://docs.google.com/forms/d/e/1FAIpQLSdb7BH3ndSxp9CUxZzjhUfEjlFmcdcU4l9UzPMMZBNsJdr2_g/viewform?usp=header" target="_blank" rel="noopener">Gmail Quiz</a></td></tr>
+        </tbody>
+      </table>
+      <h2>Final</h2>
+      <p>Congrats for making it this far! You can take the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9N9ZNUTrRCEZTHMHCfP8XzSQzjdEbvxx72EbcloeVRFpqaA/viewform?usp=dialog" target="_blank" rel="noopener">Google Workspace Final here</a>.</p>
+    </main>
+  </div>
+</body>
+</html>

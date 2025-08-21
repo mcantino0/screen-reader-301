@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - SR 301</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="Favicon.png" rel="icon" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #F1ECE8;
+      color: #1B4557;
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #081D21;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .main-content p, .main-content ul, .main-content ol {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 500;
+      font-size: 14pt;
+      color: #000;
+      line-height: 1.7;
+    }
+    a {
+      color: #254473;
+      text-decoration: underline;
+    }
+    a:focus, a:hover {
+      outline: 2px solid #254473;
+      outline-offset: 2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 220px;
+      background-color: #1A0F00;
+      color: #F9F9F9;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 100px;
+      z-index: 10;
+      box-shadow: 2px 0 8px rgba(27,69,87,0.08);
+    }
+    .sidebar div {
+      width: 100%;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .sidebar span {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #F9F9F9;
+      letter-spacing: 2px;
+    }
+    .sidebar hr {
+      width: 80%;
+      border: 1px solid #F9F9F9;
+      margin: 0 auto 1.2rem auto;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .sidebar li {
+      width: 100%;
+    }
+    .sidebar a {
+      display: block;
+      color: #F9F9F9;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+      color: #254473;
+      background: #FDF6ED;
+      border-left: 4px solid #254473;
+      outline: 2px solid #254473;
+      outline-offset: 2px;
+    }
+    .layout {
+      margin-left: 220px;
+      width: calc(100vw - 220px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #F1ECE8;
+      box-sizing: border-box;
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: #F1ECE8;
+      border-bottom: 2px solid #F1ECE8;
+    }
+    .banner-img {
+      width: 100%;
+      height: 720px;
+      object-fit: cover;
+      object-position: bottom;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      color: #051214;
+      font-size: 2rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 0 0 1rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0;
+    }
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      background: #F1ECE8;
+      border-radius: 0 0 1rem 1rem;
+      box-sizing: border-box;
+      min-height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation" class="sidebar">
+    <div style="width:100%; text-align:center; margin-top:0; margin-bottom:1rem;">
+      <span style="font-family:'Montserrat', Arial, sans-serif; font-size:2rem; font-weight:700; color:#F9F9F9; letter-spacing:2px;">SR 301</span>
+    </div>
+    <hr style="width:80%; border:1px solid #F9F9F9; margin:0 auto 1.2rem auto;" />
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
+      <li><a href="files.html" aria-current="page">Resources</a></li>
+    </ul>
+  </nav>
+  <div class="layout">
+    <div class="banner" role="banner">
+      <img src="banner image.jpg" alt="SR 301 Banner" class="banner-img" />
+      <div class="banner-content">
+        <h1 style="color:#081D21; margin:0;">Resources</h1>
+      </div>
+    </div>
+    <main class="main-content" id="main-content" tabindex="-1">
+    <h2 style="margin-top: 0rem;">Course Documents</h2> 
+    <ul>
+        <li><a href="https://drive.google.com/file/d/17zwARBuoxlmDSBE9OiS4TdhW7NsRZPUw/view?usp=drive_link" target="_blank" rel="noopener">JAWS Crash Course #2: Google Suite</a> - Condensed version of the 3 documents below</li> 
+        <li><a href="https://docs.google.com/document/d/1mu-16aTRlPPTU5I4tn5reLbPDiAj8uHlswE3F_3raNs/edit?usp=sharing" target="_blank" rel="noopener">Google Drive, Gmail, and Screen Readers</a></li> 
+        <li><a href="https://docs.google.com/document/d/1X8RT8O-AnucRAxZEyWDyU-TctPL4ZQfu8LtpWfDQc4E/edit?usp=sharing" target="_blank" rel="noopener">Google Docs and JAWS</a></li> 
+        <li><a href="https://docs.google.com/document/d/17H4pQIHCneTOw9fK5bTe0iHAukGsbUEQsDVosrICwOQ/edit?usp=sharing" target="_blank" rel="noopener">Google Slides and JAWS</a></li>
+        </ul> 
+<h2>Google Drive Resources</h2>
+<p>Google Documentation</p>
+    <ul>
+      <li><a href="https://support.google.com/drive/answer/12169158?hl=en" target="_blank" rel="noopener">Use a screen reader with Google Drive</a></li>
+      <li><a href="https://support.google.com/drive/answer/2563044?hl=en" target="_blank" rel="noopener">Keyboard shortcuts for Google Drive</a></li>
+    </ul>
+  <p>Webinars and Videos</p>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=rcEBeAu6p2w" target="_blank" rel="noopener">Up in the Clouds with Google Drive and JAWS</a></li>
+      <li><a href="https://youtu.be/ZpuTsU_AFu4?si=b2swr-zD7rBVGRJo" target="_blank" rel="noopener">Eye.t LIVE: Google Drive and Screen Readers</a></li>
+      <li><a href="https://www.youtube.com/watch?v=RZ9EymHw85M" target="_blank" rel="noopener">Google Products with JAWS, NVDA, or Chromevox</a></li>
+    </ul>
+<h2>Google Docs Resources</h2>
+<p>Google Documentation</p>
+    <ul>
+      <li><a href="https://support.google.com/docs/answer/1632201?hl=en" target="_blank" rel="noopener">Edit documents with a screen reader</a></li>
+      <li><a href="https://support.google.com/docs/answer/6282736?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Cnvda%2Cjaws" target="_blank" rel="noopener">Accessibility for Google Docs, Sheets, Slides &amp; Drawings</a></li>
+      <li><a href="https://support.google.com/docs/answer/6057417?hl=en&ref_topic=6039805&sjid=14818505303932682607-NC" target="_blank" rel="noopener">Use a braille display with Google Docs, Sheets, Slides &amp; Drawings</a></li>
+    </ul>
+  <p>Webinars and Videos</p>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=AcdDxMI05f4" target="_blank" rel="noopener">JAWS and Google Docs</a>, from APH and Freedom Scientific, 2020</li>
+      <li><a href="https://doccenter.freedomscientific.com/doccenter/archives/2022_06_16_Google_Docs_Suggest_Comments/Prep_and_Proof_Google_Docs_Suggesting_Mode_and_Comments_with_JAWS.mp4" target="_blank" rel="noopener">Prep and Proof Google Documents Using Suggesting Mode and Comments with JAWS</a>, from Vispero, 2022</li>
+      <li><a href="https://www.youtube.com/watch?v=wfs6dDBcrhg" target="_blank" rel="noopener">JAWS QuickTips: Using the Text Analyzer</a>, Freedom Scientific</li>
+      <li><a href="https://www.youtube.com/watch?v=-sjLz-JrZ2I" target="_blank" rel="noopener">Google Docs: Creating Comments</a>, eye.t</li>
+      <li><a href="https://www.youtube.com/watch?v=SZv6vzRYYkg" target="_blank" rel="noopener">Video: Google Docs: Reading Comments</a>, eye.t</li>
+      <li><a href="https://www.youtube.com/watch?v=jTs9l9i8PEk" target="_blank" rel="noopener">Video: Google Docs: Replying to Comments</a>, eye.t</li>
+    </ul>
+<h2>Google Slides Resources</h2>
+ <p>Google Documentation</p>
+    <ul>
+      <li><a href="https://support.google.com/docs/answer/1634140" target="_blank" rel="noopener">Edit presentations with a screen reader</a></li>
+    </ul>
+  <p>Webinars and Videos</p>
+    <ul>
+      <li><a href="https://doccenter.freedomscientific.com/doccenter/archives/2023_09_23_Google_Slides/An-Introduction-to-Google-Slides-with-JAWS.mp4" target="_blank" rel="noopener">An Introduction to Google Slides with JAWS</a>, Freedom Scientific</li>
+      <li><a href="https://www.youtube.com/watch?v=btUBNnJplyE" target="_blank" rel="noopener">JAWS with Google Slides</a>, APH</li>
+    </ul>
+ 
+<h2>Gmail Resources</h2>
+<p>Google Documentation</p>
+    <ul>
+      <li><a href="https://support.google.com/mail/answer/90559?hl=en" target="_blank" rel="noopener">Use Gmail with a screen reader</a></li>
+      <li><a href="https://support.google.com/mail/answer/6594" target="_blank" rel="noopener">Keyboard shortcuts for Gmail</a></li>  
+    </ul>  
+  <p>Webinars and Videos</p>
+    <ul>
+      <li><a href="https://youtu.be/ISuwv-57NZQ?si=k7DveqftfPeUwtkr" target="_blank" rel="noopener">(e)Mailing It In: JAWS and Gmail in Standard View</a></li>
+    </ul>
+  
+        <h2>AI Assitants</h2>
+    <p>Feeling stuck? Try asking these specially-trained chatbots for help.</p>
+    <ul style="width: 90%;">
+      <li><a href="https://fscompanion.freedomscientific.com/" target="_blank" rel="noopener">FS Companion</a> - The official Freedom Scientific chatbot for JAWS, ZoomText, Fusion, and the Focus 40.</li>
+      <li><a href="https://chatgpt.com/g/g-36DaPisdC-jaws-screen-reader" target="_blank" rel="noopener">JAWS Chatbot</a> (BVIS) - Requires a free ChatGPT account</li>
+      <li><a href="https://chatgpt.com/g/g-rdHxQxihn-nvda-screen-reader" target="_blank" rel="noopener">NVDA Chatbot</a> (BVIS) - Requires a free ChatGPT account</li>
+    </ul> 
+    <h2>More Courses</h2>
+    <p>If you liked this course, check out SR 201 and 301!</p>
+    <ul style="width: 92%;">
+      <li><a href="https://mcantino0.github.io/screen-reader-101/index.html" target="_blank" rel="noopener">Screen Readers 101</a> - JAWS, NVDA, and Basic Computer Navigation. Learn the basics of using screen readers on a Windows computer</li>
+      <li><a href="https://mcantino0.github.io/screen-reader-201/index.html" target="_blank" rel="noopener">Screen Readers 201</a> - JAWS and Basic Internet Navigation. Learn the ins and outs of navigating the web with JAWS</li>
+    </ul> 
+    </main>
+  </div>
+</body>
+</html>
