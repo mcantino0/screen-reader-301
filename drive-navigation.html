@@ -200,6 +200,86 @@
   padding: 2px 4px;
   border-radius: 3px;
 }
+    @media (max-width: 900px) {
+      .sidebar {
+        width: 160px;
+        padding-top: 80px;
+      }
+      .layout {
+        margin-left: 160px;
+        width: calc(100vw - 160px);
+      }
+      .banner-content {
+        font-size: 1.2rem;
+        padding: 0 1rem 0.5rem 1rem;
+      }
+      .main-content {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 0;
+        box-shadow: none;
+      }
+      .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .sidebar li {
+        width: auto;
+      }
+      .sidebar a {
+        padding: 0.5rem 1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+      }
+      .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+        border-left: none;
+        border-bottom: 3px solid #254473;
+        background: #D5E4D9;
+      }
+      .layout {
+        margin-left: 0;
+        width: 100vw;
+      }
+      .banner {
+        min-height: 120px;
+        height: auto;
+      }
+      .banner-content {
+        min-height: 120px;
+        height: auto;
+        font-size: 1rem;
+        padding: 1rem;
+      }
+      .banner-content h1 {
+        font-size: 1.8rem;
+        width: 100%;
+        margin: 0;
+      }
+      .main-content {
+        padding: 1rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -218,13 +298,11 @@
     <div class="banner" role="banner">
       <img src="banner image.jpg" alt="SR 301 Banner" class="banner-img" />
       <div class="banner-content">
-        <h1 style="color:#1A0F00; margin:0; position:relative; z-index:2; width: 80%;">Lesson 2: Google Drive - Navigation and File Creation</h1>
+        <h1>Lesson 2: Google Drive - Navigation and File Creation</h1>
       </div>
     </div>
     <main class="main-content" id="main-content" tabindex="-1">    
-<p>Now that your essential settings are in place, let's learn how to navigate Google Drive and create new files.</p>
-      <h2>Basic Navigation</h2>
-      <p>While in Google Drive, you’ll spend most of your time in the Navigation and Items areas. The Navigation area lists the main Google Drive folders (My Drive, Shared with Me, Starred, etc.). The Items area lists all the files for your current folder. <strong>To move between these areas, you’ll use a two-step “go to” command (<kbd>Alt</kbd> + <kbd>G</kbd>).</strong></p>
+<h2>Screen Reader and Braille Support</h2>
 <table style="width: 80%; margin: 0 auto; border-collapse: collapse;">
   <colgroup>
     <col style="width: 50%;">
@@ -238,23 +316,22 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Go to</strong> Navigation Region</td>
-      <td><kbd>Alt</kbd> + <kbd>G</kbd>, then <kbd>N</kbd></td>
+      <td>Enable/disable Screen Reader Support</td>
+      <td><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Z</kbd></td>
     </tr>
     <tr>
-      <td><strong>Go to</strong> Items (list of files)</td>
-      <td><kbd>Alt</kbd> + <kbd>G</kbd>, then <kbd>I</kbd></td>
-    </tr>
-    <tr>
-      <td><strong>Go to</strong> Details (info about specific file)</td>
-      <td><kbd>Alt</kbd> + <kbd>G</kbd>, then <kbd>D</kbd></td>
+      <td>Enable/disable Braille Support</td>
+      <td><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>H</kbd></td>
     </tr>
   </tbody>
 </table>
-<p>If you want to open a particular folder or file, just press <kbd>Enter</kbd>.</p>
-      <h2>Creating New Content</h2>
-<p>The "go to" commands will help you locate and open existing files, but what if you want to make something new?</p>
-<p>You can add new content to Google Drive by using the “New” button in the top left corner of the screen. This button will let you upload new folders or files from your computer, and it will also let you create new folders or new documents inside of Google Drive. Use the New button to quickly create new Google Docs or Google Slides files. The files will automatically be added to the folder currently opened in your Items file area. <strong>To access the "New" button, press <kbd>Alt</kbd> + <kbd>N</kbd>, then use the arrows keys to move through the menu contents.</strong></p>
+
+<p>Your screen reader won’t be able to read anything without Screen Reader Support enabled. Whether or not you have a braille display connected, enabling Braille Support will help your screen reader better interact with different elements in your document.</p>
+<p>If you don’t want to memorize the keyboard commands, there are a couple other ways to enable these features.</p>
+<p>Both features can be found in the Tools menu, under Accessibility.</p>
+<p>You can also use the “Search the Menus” feature in the Help menu.</p>
+
+<h2>Turn Off Virtual PC Cursor</h2>
 <table style="width: 80%; margin: 0 auto; border-collapse: collapse;">
   <colgroup>
     <col style="width: 50%;">
@@ -268,11 +345,40 @@
   </thead>
   <tbody>
     <tr>
-      <td>Upload/Create New folders or files</td>
-      <td><kbd>Alt</kbd> + <kbd>N</kbd></td>
+      <td>Enable/disable Virtual PC Cursor</td>
+      <td><kbd>JAWS</kbd> + <kbd>Z</kbd></td>
     </tr>
   </tbody>
 </table>
+
+<p>Before you can start working in Google Docs, you’ll need to turn off the JAWS Virtual PC Cursor. The Virtual PC Cursor helps JAWS navigate web pages with shortcut keys. If you leave the Virtual Cursor on, JAWS will try to navigate Google Docs as if it is a web page, and you won’t be able to write any content. By turning the Virtual PC Cursor off, you’re letting JAWS know that you’re ready to start writing.</p>
+
+<h2>Most Useful Commands</h2>
+<table style="width: 80%; margin: 0 auto; border-collapse: collapse;">
+  <colgroup>
+    <col style="width: 50%;">
+    <col style="width: 50%;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th scope="col">Task</th>
+      <th scope="col">Keyboard Command</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Search the Menus</td>
+      <td><kbd>Alt</kbd> + <kbd>/</kbd></td>
+    </tr>
+    <tr>
+      <td>List of Keyboard Shortcuts</td>
+      <td><kbd>Ctrl</kbd> + <kbd>/</kbd></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The “Search the Menus” feature in the Google Docs Help menu is incredibly powerful. Not sure how to access a particular tool? No problem. Just press <kbd>Alt</kbd> + <kbd>/</kbd>, and write the name of the tool in the search field. Google Docs will provide you with a list of options that you can navigate with up and down arrows. Just press Enter to make a selection. This approach can be easier than navigating through menus or memorizing a long list of keyboard shortcuts.</p>
+<p>But maybe you like memorizing keyboard shortcuts. No problem! Press <kbd>Ctrl</kbd> + <kbd>/</kbd>, and you’ll get a full list of keyboard shortcuts that can be used in Google Docs.</p>
       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
         <a href="drive-essential-settings.html" class="nav-btn prev-btn" role="button" aria-label="Go to Lesson 1: Essential Settings" tabindex="0">&larr; Previous</a>
         <a href="drive-actions.html" class="nav-btn next-btn" role="button" aria-label="Go to Lesson 3: Actions, Search, and Keyboard Help" tabindex="0">Next &rarr;</a>
@@ -280,5 +386,4 @@
     </main>
   </div>
 </body>
-
 </html>

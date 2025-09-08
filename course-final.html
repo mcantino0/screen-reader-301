@@ -8,6 +8,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="Favicon.png" rel="icon" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const sidebar = document.querySelector('.sidebar');
+      
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', !isExpanded);
+          sidebar.classList.toggle('active');
+          menuToggle.textContent = isExpanded ? 'Menu' : 'Close';
+        });
+      }
+    });
+  </script>
   <style>
     body {
       margin: 0;
@@ -28,12 +43,27 @@
       margin-bottom: 1rem;
       text-align: center;
     }
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
     .main-content p, .main-content ul, .main-content ol {
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 500;
       font-size: 14pt;
       color: #000;
       line-height: 1.7;
+    }
+    @media (max-width: 600px) {
+      .main-content p, .main-content ul, .main-content ol {
+        font-size: 12pt;
+      }
     }
     table {
       width: 100%;
@@ -52,6 +82,14 @@
     th {
       background: #F7E9CB;
       font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      table {
+        font-size: 12pt;
+      }
+      th, td {
+        padding: 0.5rem;
+      }
     }
     a {
       color: #254473;
@@ -75,6 +113,33 @@
       padding-top: 100px;
       z-index: 10;
       box-shadow: 2px 0 8px rgba(27,69,87,0.08);
+      transition: transform 0.3s ease;
+    }
+    @media (max-width: 900px) {
+      .sidebar {
+        padding-top: 60px;
+        width: 180px;
+      }
+      body {
+        padding-top: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding-top: 0;
+        transform: translateY(-100%);
+      }
+      .sidebar.active {
+        transform: translateY(0);
+      }
+      body {
+        padding-top: 60px;
+      }
     }
     .sidebar div {
       width: 100%;
@@ -113,6 +178,18 @@
       outline: 2px solid #254473;
       outline-offset: 2px;
     }
+    @media (max-width: 600px) {
+      .sidebar div {
+        margin-bottom: 0.5rem;
+      }
+      .sidebar hr {
+        margin-bottom: 0.5rem;
+      }
+      .sidebar a {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+      }
+    }
     .layout {
       margin-left: 220px;
       width: calc(100vw - 220px);
@@ -121,6 +198,18 @@
       flex-direction: column;
       background: #FEFAF6;
       box-sizing: border-box;
+    }
+    @media (max-width: 900px) {
+      .layout {
+        margin-left: 180px;
+        width: calc(100vw - 180px);
+      }
+    }
+    @media (max-width: 600px) {
+      .layout {
+        margin-left: 0;
+        width: 100vw;
+      }
     }
     .banner {
       position: relative;
@@ -131,6 +220,16 @@
       align-items: flex-end;
       background: #FEFAF6;
       border-bottom: 2px solid #FEFAF6;
+    }
+    @media (max-width: 900px) {
+      .banner {
+        height: 200px;
+      }
+    }
+    @media (max-width: 600px) {
+      .banner {
+        height: 160px;
+      }
     }
     .banner-img {
       width: 100%;
@@ -166,6 +265,11 @@
       box-sizing: border-box;
       min-height: 400px;
     }
+    @media (max-width: 600px) {
+      .main-content {
+        padding: 1rem;
+      }
+    }
     .nav-btn {
       display: inline-block;
       background-color: #254473;
@@ -187,11 +291,36 @@
       outline: 2px solid #254473;
       outline-offset: 2px;
     }
+    @media (max-width: 600px) {
+      .nav-btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+        margin: 0 0.25rem;
+      }
+    }
     .prev-btn {
       margin-right: auto;
     }
     .next-btn {
       margin-left: auto;
+    }
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      background: #1A0F00;
+      color: #F9F9F9;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+      }
     }
     kbd {
   font-weight: bold;
@@ -203,7 +332,8 @@
   </style>
 </head>
 <body>
-  <nav aria-label="Main navigation" class="sidebar">
+  <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  <nav aria-label="Main navigation" class="sidebar" id="main-nav">
     <div style="width:100%; text-align:center; margin-top:0; margin-bottom:1rem;">
       <span style="font-family:'Montserrat', Arial, sans-serif; font-size:2rem; font-weight:700; color:#F9F9F9; letter-spacing:2px;">SR 301</span>
     </div>

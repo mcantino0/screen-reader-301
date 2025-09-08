@@ -19,7 +19,7 @@
       overflow-x: hidden;
     }
     h1, h2, h3, h4, h5, h6 {
-      color: #081D21;
+      color: #051214;
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
     }
@@ -147,6 +147,9 @@
       height: 100%;
       padding: 0;
     }
+    .banner-content h1 {
+      margin: 0;
+    }
     .main-content {
       flex: 1;
       padding: 2rem;
@@ -154,6 +157,76 @@
       border-radius: 0 0 1rem 1rem;
       box-sizing: border-box;
       min-height: 400px;
+    }
+    @media (max-width: 900px) {
+      .sidebar {
+        width: 160px;
+        padding-top: 80px;
+      }
+      .layout {
+        margin-left: 160px;
+        width: calc(100vw - 160px);
+      }
+      .banner-content {
+        font-size: 1.2rem;
+        padding: 0 1rem 0.5rem 1rem;
+      }
+      .main-content {
+        padding: 1rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 0;
+        box-shadow: none;
+      }
+      .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .sidebar li {
+        width: auto;
+      }
+      .sidebar a {
+        padding: 0.5rem 1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+      }
+      .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+        border-left: none;
+        border-bottom: 3px solid #254473;
+        background: #D5E4D9;
+      }
+      .layout {
+        margin-left: 0;
+        width: 100vw;
+      }
+      .banner {
+        height: 80px;
+      }
+      .banner-content {
+        height: 80px;
+        font-size: 1rem;
+      }
+      .banner-content h1 {
+        width: 100%;
+        margin: 0;
+      }
+      .main-content {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -173,7 +246,7 @@
     <div class="banner" role="banner">
       <img src="banner image.jpg" alt="SR 301 Banner" class="banner-img" />
       <div class="banner-content">
-        <h1 style="color:#081D21; margin:0;">Resources</h1>
+        <h1>Resources</h1>
       </div>
     </div>
     <main class="main-content" id="main-content" tabindex="-1">
